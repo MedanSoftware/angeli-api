@@ -3,6 +3,65 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
+| App Info
+|--------------------------------------------------------------------------
+*/
+defined('APP_INFO') or define('APP_INFO', array(
+	'name' => 'Angeli-API',
+	'version' => '1.0.0',
+	'ci_version' => CI_VERSION,
+	'php_version' => PHP_VERSION
+));
+
+if (isset($_SERVER['SERVER_PORT']))
+{
+	/*
+	|--------------------------------------------------------------------------
+	| Base URL
+	|--------------------------------------------------------------------------
+	*/
+	define('BASE_URL',
+		(!empty($_SERVER['SERVER_PORT'])?$_SERVER['SERVER_PORT']==443?'https':'http':FALSE).
+		"://".(!empty($_SERVER['SERVER_NAME'])?$_SERVER['SERVER_NAME']:FALSE).str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']));
+
+	/*
+	|--------------------------------------------------------------------------
+	| Current URL
+	|--------------------------------------------------------------------------
+	*/
+	define('CURRENT_URL', (!empty($_SERVER['SERVER_PORT'])?$_SERVER['SERVER_PORT']==443?'https':'http':FALSE)."://".(!empty($_SERVER['SERVER_NAME'])?$_SERVER['SERVER_NAME']:FALSE).str_replace('//', '/', $_SERVER['REQUEST_URI']));
+}
+
+/*
+|--------------------------------------------------------------------------
+| Log Threshold
+|--------------------------------------------------------------------------
+*/
+defined('CI_LOG') or define('CI_LOG', isset($_SERVER['CI_LOG']) ? $_SERVER['CI_LOG'] : 1);
+
+/*
+|--------------------------------------------------------------------------
+| Time Refrence
+|--------------------------------------------------------------------------
+*/
+defined('TIME_REFRENCE') or define('TIME_REFRENCE', isset($_SERVER['TIME_REFRENCE']) ? $_SERVER['TIME_REFRENCE'] : 'local');
+
+/*
+|--------------------------------------------------------------------------
+| Encryption Key
+|--------------------------------------------------------------------------
+*/
+defined('ENCRYPTION_KEY') or define('ENCRYPTION_KEY', isset($_SERVER['ENCRYPTION_KEY']) ? $_SERVER['ENCRYPTION_KEY'] : 'angeli');
+
+/*
+|--------------------------------------------------------------------------
+| Active Database Group
+|--------------------------------------------------------------------------
+*/
+defined('ACTIVE_DATABASE_GROUP') or define('ACTIVE_DATABASE_GROUP', isset($_SERVER['ACTIVE_DATABASE_GROUP']) ? $_SERVER['ACTIVE_DATABASE_GROUP'] : 'default');
+
+/*
+|--------------------------------------------------------------------------
 | Display Debug backtrace
 |--------------------------------------------------------------------------
 |
