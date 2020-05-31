@@ -23,7 +23,7 @@ class RESTful_API extends RestController
 	public function __construct()
 	{
 		parent::__construct();
-		$this->form_validation->set_data($this->{$this->request->method}());
+		$this->form_validation->set_data($this->request());
 	}
 
 	/**
@@ -34,7 +34,7 @@ class RESTful_API extends RestController
 	 */
 	protected function request($key = null)
 	{
-		return trim($this->{$this->request->method}($key));
+		return $this->{$this->request->method}($key);
 	}
 
 	/**
