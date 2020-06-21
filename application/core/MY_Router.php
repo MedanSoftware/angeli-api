@@ -1,8 +1,2 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
-
-require_once(APPPATH.'third_party/MX/Router.php');
-
-class MY_Router extends MX_Router
-{
-	
-}
+require_once(FCPATH.'../application/core/MY_Router.php');
