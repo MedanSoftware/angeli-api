@@ -62,6 +62,27 @@ defined('ACTIVE_DATABASE_GROUP') or define('ACTIVE_DATABASE_GROUP', isset($_SERV
 
 /*
 |--------------------------------------------------------------------------
+| Eloquent Model Locations
+|--------------------------------------------------------------------------
+*/
+defined('ELOQUENT_MODEL_LOCATIONS') or define('ELOQUENT_MODEL_LOCATIONS', array(FCPATH.'../application/eloquent_models'));
+
+/*
+|--------------------------------------------------------------------------
+| Assets Path
+|--------------------------------------------------------------------------
+*/
+defined('ASSETS_PATH') or define('ASSETS_PATH', isset($_SERVER['ASSETS_PATH']) ? $_SERVER['ASSETS_PATH'] : FCPATH.'../assets');
+
+/*
+|--------------------------------------------------------------------------
+| Themes Path
+|--------------------------------------------------------------------------
+*/
+defined('THEMES_PATH') or define('THEMES_PATH', isset($_SERVER['THEMES_PATH']) ? $_SERVER['THEMES_PATH'] : FCPATH.'../application/themes');
+
+/*
+|--------------------------------------------------------------------------
 | Display Debug backtrace
 |--------------------------------------------------------------------------
 |
